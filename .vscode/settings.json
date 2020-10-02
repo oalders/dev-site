@@ -1,0 +1,26 @@
+{
+  "editor.codeActionsOnSave": {
+      "source.fixAll": true
+  },
+  "editor.fontSize": 18,
+  "editor.fontFamily": "Source Code Pro, Menlo, Monaco, 'Courier New', monospace",
+  "eslint.workingDirectories": [
+      {
+          "mode": "auto"
+      }
+  ],
+  "workbench.colorTheme": "One Dark Pro",
+  "window.zoomLevel": 0,
+  "terminal.integrated.fontSize": 18,
+  "terminal.integrated.fontFamily": "Source Code Pro, Menlo, Monaco, 'Courier New', monospace",
+  "css.validate": false,
+  "less.validate": false,
+  "editor.renderWhitespace": "all",
+  "editor.tabSize": 2,
+  "files.autoSave": "off",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "editor.foldingStrategy": "indentation",
+  "editor.rulers": [
+      80,
+  ]
+}
