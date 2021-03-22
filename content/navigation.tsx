@@ -100,8 +100,18 @@ const navigation: IItem[] = [
       },
       {
         hasDivider: true,
-        title: 'API Documentation',
-        to: '/geoip/api-documentation',
+        secondaryItems: [
+          {
+            title: 'Requests',
+            to: '/geoip/web-services/requests',
+          },
+          {
+            title: 'Responses',
+            to: '/geoip/web-services/responses',
+          },
+        ],
+        title: 'Web Services',
+        to: '/geoip/web-services',
       },
       {
         secondaryItems: [
