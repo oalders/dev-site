@@ -2,7 +2,7 @@ import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import * as React from 'react';
 
-import { pre as Pre } from './Mdx';
+import Pre from './Mdx/Pre';
 
 import * as styles from './Example.module.scss';
 

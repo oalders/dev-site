@@ -1,23 +1,27 @@
 /* eslint-disable filenames/match-exported */
-import { CreatePagesArgs } from 'gatsby';
+import { CreatePagesArgs, PluginOptions } from 'gatsby';
 
 import { IBaseQuery } from '../../../baseQuery';
-import homeQuery from '../../../templates/Home/query';
-import overviewQuery from '../../../templates/Overview/query';
-import pageQuery from '../../../templates/Page/query';
 
-const queries = [
-  homeQuery,
-  overviewQuery,
-  pageQuery,
-];
-
-const createMdxPages = async (args: CreatePagesArgs): Promise<any> => {
+const createMdxPages = async (
+  args: CreatePagesArgs,
+  options: PluginOptions,
+): Promise<any> => {
   const { actions, graphql, reporter } = args;
   const { createPage } = actions;
 
+  // console.log(options.templates);
+
+  const queries: (
+    (graphql: any) => Promise<any>
+  )[] = (options as any).templates.map(
+    async (template: any) => await import(template.query)
+      .then(r => r.default)
+  );
+
   return Promise.all(
-    queries.map(async (query) => {
+    queries.map(async (queryPromise) => {
+      const query = await queryPromise;
       const result = await query(graphql);
 
       if (result.errors) {

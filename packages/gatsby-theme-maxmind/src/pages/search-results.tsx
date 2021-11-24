@@ -4,7 +4,7 @@ import { globalHistory } from '@reach/router';
 import { RouteUpdateArgs } from 'gatsby';
 import React, { useEffect, useState } from 'react';
 
-import Layout from '../components/Layout/Layout';
+import Layout from '../../../../sites/dev.maxmind.com/src/components/Layout/Layout';
 import Link from '../components/Link';
 import Loading from '../components/Loading';
 import H1 from '../components/Mdx/H1';

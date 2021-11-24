@@ -1,5 +1,5 @@
 /* eslint-disable filenames/match-exported */
-import { BaseQuery, IBaseQuery } from 'gatsby-theme-maxmind/src/baseQuery';
+import { BaseQuery, IBaseQuery } from 'gatsby-theme-maxmind/baseQuery';
 
 export type IHomeContext = Pick<IBaseQuery, 'frontmatter'>;
 

@@ -21,8 +21,13 @@ const GLOBALLY_IGNORED_SOURCE_FILES = [
   '**/_*',
 ];
 
+interface ITemplate {
+  component: string;
+  key: string;
+  query: string;
+}
+
 export interface IThemeOptions extends PluginOptions {
-  defaultLayouts?: Record<string, string>;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   feeds: any[];
   gtmTrackingId: string;
@@ -32,6 +37,7 @@ export interface IThemeOptions extends PluginOptions {
     title: string,
   },
   sitePath: string;
+  templates: ITemplate[];
   twitterUsername: string;
   url: string;
 }
@@ -75,10 +81,10 @@ const config = (options: IThemeOptions): GatsbyConfig => {
       {
         options: {
           defaultLayouts: {
-            home: require.resolve(`${THEME_ROOT}src/templates/Home`),
-            overviews: require.resolve(`${THEME_ROOT}src/templates/Overview`),
-            pages: require.resolve(`${THEME_ROOT}src/templates/Page`),
-            ...options.defaultLayouts,
+            ...options.templates.reduce((acc, template) => ({
+              ...acc,
+              [template.key]: template.component,
+            }), {}),
           },
           extensions: [
             '.mdx',
@@ -101,6 +107,7 @@ const config = (options: IThemeOptions): GatsbyConfig => {
       },
       'gatsby-plugin-typescript',
       'gatsby-plugin-ts-checker',
+      'gatsby-plugin-tsconfig-paths',
       'gatsby-plugin-image',
       'gatsby-transformer-sharp',
       'gatsby-plugin-sharp',

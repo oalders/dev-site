@@ -1,4 +1,4 @@
-import { IThemeOptions } from '@theme/gatsby/gatsby-config';
+import { IThemeOptions } from 'gatsby-theme-maxmind/gatsby/gatsby-config';
 
 import createReleaseNotesFeed from '../feeds/createReleaseNotesFeed';
 import createServerIpAddressesFeed from '../feeds/createServerIpAddressesFeed';
@@ -8,9 +8,6 @@ const PROJECT_ROOT = `${__dirname}/../../../../`;
 const SITE_ROOT = `${__dirname}/../../`;
 
 const themeOptions: IThemeOptions = {
-  defaultLayouts: {
-    home: require.resolve(`${SITE_ROOT}src/templates/Home`),
-  },
   feeds: [
     createReleaseNotesFeed({
       description: 'Release notes for MaxMind\'s GeoIP2 product line',
@@ -33,6 +30,23 @@ const themeOptions: IThemeOptions = {
   },
   plugins: [],
   sitePath: SITE_ROOT,
+  templates: [
+    {
+      component: require.resolve(`${SITE_ROOT}src/templates/Home`),
+      key: 'home',
+      query: require.resolve(`${SITE_ROOT}src/templates/Home/query`),
+    },
+    {
+      component: require.resolve(`${SITE_ROOT}src/templates/Overview`),
+      key: 'overviews',
+      query: require.resolve(`${SITE_ROOT}src/templates/Overview/query`),
+    },
+    {
+      component: require.resolve(`${SITE_ROOT}src/templates/Page`),
+      key: 'pages',
+      query: require.resolve(`${SITE_ROOT}src/templates/Page/query`),
+    },
+  ],
   twitterUsername: '@maxmind',
   url: GATSBY_URL,
 };

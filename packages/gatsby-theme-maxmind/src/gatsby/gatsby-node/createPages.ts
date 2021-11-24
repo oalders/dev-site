@@ -1,11 +1,12 @@
-import { CreatePagesArgs, GatsbyNode } from 'gatsby';
+import { CreatePagesArgs, GatsbyNode, PluginOptions } from 'gatsby';
 
 import createMdxPages from './pages/createMdxPages';
 
 export const createPages: GatsbyNode['createPages'] = async (
-  props: CreatePagesArgs
+  props: CreatePagesArgs,
+  options: PluginOptions,
 ) => {
   await Promise.all([
-    createMdxPages(props),
+    createMdxPages(props, options),
   ]);
 };

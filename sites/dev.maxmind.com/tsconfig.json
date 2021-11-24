@@ -1,23 +1,17 @@
 {
   "compilerOptions": {
     "baseUrl": ".",
-    "lib": [
-      "dom",
-      "ES2019"
-    ],
-    "module": "commonjs",
-    "moduleResolution": "node",
     "paths": {
       "@site/*": [
         "./src/*"
       ],
       "@theme/*": [
-        "../../packages/gatsby-theme-maxmind/src/*"
-      ]
+        "./node_modules/gatsby-theme-maxmind/*"
+      ],
     },
     "typeRoots": [
-      "../../packages/gatsby-theme-maxmind/src/types",
-      "../../node_modules/@types"
+      "./../../packages/gatsby-theme-maxmind/src/types",
+      "./../../node_modules/@types"
     ]
   },
   "exclude": [

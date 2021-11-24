@@ -1,7 +1,8 @@
+// eslint-disable-next-line filenames/match-exported
 import * as React from 'react';
 import { FaRegSurprise as O } from 'react-icons/fa';
 
-import Layout from '../components/Layout/Layout';
+import Layout from '../../../../sites/dev.maxmind.com/src/components/Layout/Layout';
 import { p as P } from '../components/Mdx';
 
 import * as styles from './FourOhFour.module.scss';

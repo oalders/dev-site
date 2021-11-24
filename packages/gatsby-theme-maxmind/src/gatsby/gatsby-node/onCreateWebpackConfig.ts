@@ -13,10 +13,10 @@ export const onCreateWebpackConfig: GatsbyNode['onCreateWebpackConfig']= (
   props: CreateWebpackConfigArgs,
   options: PluginOptions & IThemeOptions,
 ) => {
-
   const IS_DEVELOP = props.stage === 'develop';
   const IS_PRODUCTION = !IS_DEVELOP;
   const IS_SSR = props.stage.includes('html');
+  const LINT = process.env.ENABLE_LINTING;
 
   const sassLoader = {
     loader: 'sass-loader',
@@ -94,7 +94,7 @@ export const onCreateWebpackConfig: GatsbyNode['onCreateWebpackConfig']= (
    * In the development environment, we want eslint to parse files on change and
    * output any issues to console.
    */
-  if (IS_DEVELOP) {
+  if (IS_DEVELOP && LINT) {
     props.actions.setWebpackConfig({
       plugins: [
         new ESLintPlugin({

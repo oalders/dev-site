@@ -1,6 +1,6 @@
 import classNames from 'classnames';
-import { p as P } from 'gatsby-theme-maxmind/src/components/Mdx';
-import ProductIcon from 'gatsby-theme-maxmind/src/components/ProductIcon';
+import { p as P } from 'gatsby-theme-maxmind/components/Mdx';
+import ProductIcon from 'gatsby-theme-maxmind/components/ProductIcon';
 import PropTypes from 'prop-types';
 import * as React from 'react';
 import { FaInfoCircle as InfoIcon } from 'react-icons/fa';

@@ -73,7 +73,6 @@
     "lint:json": "eslint . --ext json",
     "lint:scripts": "eslint . --ext js,ts,tsx --ignore-pattern 'functions/**/*.js'",
     "lint:styles": "stylelint ./src/**/*.{css,scss,sass}",
-    "postinstall": "yarn --cwd functions install",
     "preview": "firebase hosting:channel:deploy $(git rev-parse --abbrev-ref HEAD)",
     "serve": "firebase emulators:start --only functions,hosting",
     "start": "yarn run develop",
@@ -84,8 +83,13 @@
     "test:redirects": "yarn build:firebase-config && yarn test:e2e --verbose -t 'Static file redirects'",
     "test:unit": "jest --config .jestrc.js"
   },
-  "workspaces": [
-    "packages/*",
-    "sites/*"
-  ]
+  "workspaces": {
+    "nohoist": [
+      "gatsby-theme-maxmind"
+    ],
+    "packages": [
+      "packages/*",
+      "sites/*"
+    ]
+  }
 }

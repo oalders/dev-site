@@ -1,3 +1,6 @@
+import Layout from '@site/components/Layout/Layout';
+import LinkButton from 'gatsby-theme-maxmind/components/LinkButton';
+import { a as A } from 'gatsby-theme-maxmind/components/Mdx';
 import PropTypes from 'prop-types';
 import React from 'react';
 import {
@@ -5,10 +8,6 @@ import {
   FaCode as ContributeIcon,
   FaRocket as QuickstartIcon,
 } from 'react-icons/fa';
-
-import Layout from '@theme/components/Layout/Layout';
-import LinkButton from '@theme/components/LinkButton';
-import { a as A } from '@theme/components/Mdx';
 
 import Product from './Product';
 import { IHomeContext } from './query';
@@ -47,7 +46,7 @@ const Home: React.FC<IHome> = (props) => {
             👋
           </span>
           {' '}
-          !!! Welcome to the
+          Welcome to the
           {' '}
           <span
             className={styles.noWrap}
