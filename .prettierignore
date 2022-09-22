@@ -1,0 +1,6 @@
+.cache
+.firebase
+node_modules
+public
+!.*rc.js
+functions/**/*.js
