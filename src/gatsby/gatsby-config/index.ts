@@ -81,10 +81,12 @@ export default {
           '.mdx',
           '.md',
         ],
-        remarkPlugins: [
-          sectionize,
-          remarkExternalLinks,
-        ],
+        mdxOptions: {
+          remarkPlugins: [
+            sectionize,
+            remarkExternalLinks,
+          ],
+        },
       },
       resolve: 'gatsby-plugin-mdx',
     },
