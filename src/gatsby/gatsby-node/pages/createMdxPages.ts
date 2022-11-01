@@ -37,6 +37,9 @@ const createMdxPages = async (args: CreatePagesArgs): Promise<any> => {
           || !node.frontmatter.draft
         ) {
           createPage({
+            // TODO: Update createPage per
+            // eslint-disable-next-line max-len
+            // https://www.gatsbyjs.com/plugins/gatsby-plugin-mdx/#updating-createpage-action-in-gatsby-node
             component: node.fileAbsolutePath,
             context: node,
             path: node.fields.slug,

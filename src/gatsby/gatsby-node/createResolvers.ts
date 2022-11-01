@@ -4,6 +4,7 @@ import {
   GatsbyNode,
 } from 'gatsby';
 
+// TODO: This is where the first build error is happening
 const genMDX = require('gatsby-plugin-mdx/utils/gen-mdx');
 
 // eslint-disable-next-line max-len

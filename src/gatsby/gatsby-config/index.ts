@@ -72,6 +72,9 @@ export default {
     },
     {
       options: {
+        // TODO: Remove defaultLayouts options per
+        // eslint-disable-next-line max-len
+        // https://www.gatsbyjs.com/plugins/gatsby-plugin-mdx/#new-options-in-gatsby-config
         defaultLayouts: {
           home: require.resolve(`${GATSBY_ROOT}src/templates/Home`),
           overviews: require.resolve(`${GATSBY_ROOT}src/templates/Overview`),
